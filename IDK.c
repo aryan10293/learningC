@@ -23,7 +23,7 @@
 //     printf("your favorite player is %s", favPlayer);
 //     return 0;
 // }
-int findCircumfrence()
+void findCircumfrence()
 {
     // char favPlayer[50];
     // printf("Who's the your favorite basketball player?\n");
@@ -54,9 +54,22 @@ int findCircumfrence()
     // circumfence = 2 * 3.14159 * radius;
     // printf("the radius you entered was %d \n", radius);
     // printf("im working on something %.2f\n", circumfence);
-    return 0;
 }
-int main()
+void fariinheightToCel(int temp)
+{
+    // F = (°C × 9/5) + 32
+    // °C = (°F - 32) × 5/9
+    const float idk = 5.0 / 9.0;
+
+    double conversion = ceil((temp - 32) * idk);
+    printf("%lf \n", conversion);
+}
+void celToFairinheight(int temp)
+{
+    double conversion = (temp * (9.0 / 5.0)) + 32.0;
+    printf("%lf", conversion);
+}
+void someTriangleFormula()
 {
     double theAnswer;
     double oneSideOfThetriangle;
@@ -75,5 +88,32 @@ int main()
 
     theAnswer = sqrt(right + left);
     printf("%.2lf \n", theAnswer);
+};
+int main()
+{
+    // fariinheightToCel(55);
+    char unit;
+    printf("what temp are you converting to? \n");
+
+    scanf("%c", &unit);
+    if (unit == 'c' || unit == 'C')
+    {
+        int temp;
+        printf("Whats the current fairenhieght temp? \n");
+        scanf("%d", &temp);
+        fariinheightToCel(temp);
+    }
+    else if (unit == 'f' || unit == 'F')
+    {
+        int temp;
+        printf("Whats the current celcius temp? \n");
+        scanf("%d", &temp);
+        celToFairinheight(13);
+    }
+    else
+    {
+        printf("you entrered a invaid conversion \n");
+    }
+    // celToFairinheight(13);
     return 0;
 }
