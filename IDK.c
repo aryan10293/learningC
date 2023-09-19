@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 // int main()
 // {
@@ -27,8 +28,8 @@ int main()
     printf("Who's the best basketball player ever?\n");
 
     // Pass favPlayer without the '&' symbol
-    scanf("%s", favPlayer);
-
+    fgets(favPlayer, 50, stdin);
+    favPlayer[strcspn(favPlayer, "\n")] = '\0';
     printf("Your favorite player is %s\n", favPlayer);
 
     return 0;
