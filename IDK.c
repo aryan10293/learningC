@@ -89,7 +89,7 @@ void someTriangleFormula()
     theAnswer = sqrt(right + left);
     printf("%.2lf \n", theAnswer);
 };
-int main()
+void tempConversion()
 {
     // fariinheightToCel(55);
     char unit;
@@ -115,5 +115,65 @@ int main()
         printf("you entrered a invaid conversion \n");
     }
     // celToFairinheight(13);
+}
+
+void calculator()
+{
+    char operator;
+    double num1;
+    double num2;
+
+    printf("what operation did you want to use? *, /, +, - \n");
+    scanf("%c", &operator);
+
+    if (operator== '+')
+    {
+        printf("whats the first number you want to add? \n");
+        scanf("%lf", &num1);
+        printf("whats did you want to add %lf to? \n", num1);
+        scanf("%lf", &num2);
+        printf("num1: %lf \n", num1);
+        printf("num2: %lf \n", num2);
+        printf("the calculation is: %lf \n", num1 + num2);
+    }
+    else if (operator== '-')
+    {
+        printf("whats the first number you want to subtract? \n");
+        scanf("%lf", &num1);
+        printf("whats did you want to subtract %lf to? \n", num1);
+        scanf("%lf", &num2);
+        printf("num1: %lf \n", num1);
+        printf("num2: %lf \n", num2);
+        printf("the calculation is: %lf \n", num1 - num2);
+    }
+    else if (operator== '/')
+    {
+        printf("whats the first number you want to divide? \n");
+        scanf("%lf", &num1);
+        printf("whats did you want to divide %lf to? \n", num1);
+        scanf("%lf", &num2);
+        printf("num1: %lf \n", num1);
+        printf("num2: %lf \n", num2);
+        printf("the calculation is: %lf \n", num1 / num2);
+    }
+    else if (operator== '*')
+    {
+        printf("whats the first number you want to mutily? \n");
+        scanf("%lf", &num1);
+        printf("how many times di you want to multiply %lf ? \n", num1);
+        scanf("%lf", &num2);
+        printf("num1: %lf \n", num1);
+        printf("num2: %lf \n", num2);
+        printf("the calculation is: %lf /n", num1 * num2);
+    }
+    else
+    {
+        printf("you didn't enter a operation \n");
+    }
+}
+
+int main()
+{
+    calculator();
     return 0;
 }
