@@ -8,29 +8,14 @@
 void RockPaperScissors(const char rockPaperorScissors[])
 {
     srand(time(NULL));
-    // char str[length];
-    // for (unsigned long i = 0; i < length; i++)
-    // {
-    //     str[i] = tolower(rockPaperorScissors[i]);
-    // }
-    // printf("%lu\n", strlen(rockPaperorScissors));
-    // str[strlen(rockPaperorScissors) - 1] = '\0';
     char tikTacToeOutcomes[][20] = {
         "rock",
         "paper",
         "scissors"};
-    // for (int i = 0; i < 3; i++)
-    // {
-    //     printf("Outcome %d: %s\n", i + 1, tikTacToeOutcomes[i]);
-    // }
     int arraySize = sizeof(tikTacToeOutcomes) / sizeof(tikTacToeOutcomes[0]);
     int randomNum = (rand() % 3);
     char computerChoice[10];
     strcpy(computerChoice, tikTacToeOutcomes[randomNum]);
-    // char computerChoice[10] = tikTacToeOutcomes[randomNum];
-    // printf("Length of the string: %zu\n", length);
-
-    //  printf("you picked: %s, the computer picked %s\n", rockPaperorScissors, computerChoice);
 
     if (strcmp(rockPaperorScissors, "rock") == 0 && strcmp(computerChoice, "scissors") == 0)
     {
@@ -56,8 +41,9 @@ void RockPaperScissors(const char rockPaperorScissors[])
     {
         printf("you tied \n");
     }
-    else if (strcmp(rockPaperorScissors, "scissors") == 0)
+    else if (strcmp(rockPaperorScissors, "scissors") != 0 && strcmp(rockPaperorScissors, "paper") != 0 && strcmp(rockPaperorScissors, "rock") != 0)
     {
+        printf("pick rock paper scissors\n");
     }
 
     else
