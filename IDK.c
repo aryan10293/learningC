@@ -15,52 +15,55 @@ void RockPaperScissors(const char rockPaperorScissors[])
     // }
     // printf("%lu\n", strlen(rockPaperorScissors));
     // str[strlen(rockPaperorScissors) - 1] = '\0';
-    const char userChoice[] = "paper";
     char tikTacToeOutcomes[][20] = {
         "rock",
         "paper",
-        "scissor"};
+        "scissors"};
     // for (int i = 0; i < 3; i++)
     // {
     //     printf("Outcome %d: %s\n", i + 1, tikTacToeOutcomes[i]);
     // }
     int arraySize = sizeof(tikTacToeOutcomes) / sizeof(tikTacToeOutcomes[0]);
     int randomNum = (rand() % 3);
+    char computerChoice[10];
+    strcpy(computerChoice, tikTacToeOutcomes[randomNum]);
     // char computerChoice[10] = tikTacToeOutcomes[randomNum];
     // printf("Length of the string: %zu\n", length);
-    int result = strcmp(rockPaperorScissors, userChoice);
-    printf("are the string the same? %s\n", result == 0 ? "Yes" : "No");
-    printf("%s  %s\n", rockPaperorScissors, userChoice);
+
     //  printf("you picked: %s, the computer picked %s\n", rockPaperorScissors, computerChoice);
 
-    // if (strcmp(toLowerCase(rockPaperorScissors), "rock") && strcmp(computerChoice, "scissors") == 0)
-    // {
-    //     printf("yay you won");
-    // }
-    // else if (strcmp(rockPaperorScissors, computerChoice) == 0)
-    // {
-    //     printf("you tied");
-    // }
-    // else if (strcmp(toLowerCase(rockPaperorScissors), "paper") == 0 && strcmp(computerChoice, "rock") == 0)
-    // {
-    //     printf("yay you won");
-    // }
-    // else if (strcmp(rockPaperorScissors, computerChoice) == 0)
-    // {
-    //     printf("you tied");
-    // }
-    // else if (strcmp(toLowerCase(rockPaperorScissors), "scissors") == 0 && strcmp(computerChoice, "paper") == 0)
-    // {
-    //     printf("yay you won");
-    // }
-    // else if (strcmp(rockPaperorScissors, computerChoice) == 0)
-    // {
-    //     printf("you tied");
-    // }
-    // else
-    // {
-    //     printf("you can say all you want you lost the game");
-    // }
+    if (strcmp(rockPaperorScissors, "rock") == 0 && strcmp(computerChoice, "scissors") == 0)
+    {
+        printf("yay you won \n");
+    }
+    else if (strcmp(rockPaperorScissors, computerChoice) == 0)
+    {
+        printf("you tied \n");
+    }
+    else if (strcmp(rockPaperorScissors, "paper") == 0 && strcmp(computerChoice, "rock") == 0)
+    {
+        printf("yay you won \n");
+    }
+    else if (strcmp(rockPaperorScissors, computerChoice) == 0)
+    {
+        printf("you tied \n");
+    }
+    else if (strcmp(rockPaperorScissors, "scissors") == 0 && strcmp(computerChoice, "paper") == 0)
+    {
+        printf("yay you won \n");
+    }
+    else if (strcmp(rockPaperorScissors, computerChoice) == 0)
+    {
+        printf("you tied \n");
+    }
+    else if (strcmp(rockPaperorScissors, "scissors") == 0)
+    {
+    }
+
+    else
+    {
+        printf("you can say all you want you lost the game, computer picked: %s \n", computerChoice);
+    }
 }
 void findCircumfrence()
 {
@@ -217,11 +220,11 @@ int main()
     char gameChoice[] = "";
     printf("Rock? Paper? or Scissors?\n");
     scanf("%s", gameChoice);
-    char str[strlen(gameChoice)];
-    for (unsigned long i = 0; gameChoice[i]; i++)
+    for (int i = 0; gameChoice[i]; i++)
     {
-        str[i] = tolower(gameChoice[i]);
+        gameChoice[i] = tolower((unsigned char)gameChoice[i]);
     }
-    RockPaperScissors(str);
+    // printf("%s\n", gameChoice);
+    RockPaperScissors(gameChoice);
     return 0;
 }
